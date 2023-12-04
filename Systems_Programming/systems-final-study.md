@@ -22,9 +22,16 @@ int main() {
 }
 ```
 This code will print a starting message, then replace the current process with the `ls` command, listing files in the long format.
+-> `execl("/bin/ls", "ls", "-l", (char *) NULL);` 
+
+Arguments of execl:
+The first argument ("/bin/ls") is the path to the executable file to be executed. In this case, it is the "ls" command located in the "/bin" directory.
+The second argument ("ls") is the name of the program (or the value of argv[0] in the executed program).
+The third argument ("-l") is a command-line argument passed to the "ls" command, specifying that it should display the directory contents in a long format.
+The fourth argument ((char *) NULL) marks the end of the argument list. It is a null pointer and indicates the end of the argument vector.
 
 ### 2. `chdir()`
-`chdir()` changes the current working directory of the calling process to the directory specified in its argument.
+`chdir()` changes the current working directory of the calling process to the directory specified in its argument. 
 
 #### Example:
 ```c
